@@ -98,7 +98,7 @@ public class LogUtil {
                 .lastIndexOf(".") + 1);
         String methodName = stackTraceElement[currentIndex].getMethodName();
         String lineNumber = String.valueOf(stackTraceElement[currentIndex].getLineNumber());
-        return "at " + className + "." + methodName + "(" + className + ".java:" + lineNumber + ")";
+        return "at " + className + "." + methodName + "(" + className.split("\\$")[0] + ".java:" + lineNumber + ")";
     }
 
     private static final int MAX_LOG_LENGTH = 3000;
