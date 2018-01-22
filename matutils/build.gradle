@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -30,30 +30,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'MATUtils'
-
-    publishedGroupId = "cn.meiauto.library"
-    libraryName = 'MATUtils'
-    artifact = 'matutils'
-
-    libraryDescription = 'Android Utils'
-
-    siteUrl = 'https://github.com/liyang77723/MATUtils'
-    gitUrl = 'https://github.com/liyang77723/MATUtils.git'
-
-    libraryVersion = '0.0.5'
-
-    developerId = 'liyang'
-    developName = 'LiYang'
-    developEmail = 'liyang77723@qq.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-apply from: 'install.gradle'
-apply from: 'bintray.gradle'
