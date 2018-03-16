@@ -2,7 +2,7 @@ package cn.meiauto.matutils;
 
 import android.util.SparseArray;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 
 public class EmptyUtil {
@@ -15,8 +15,8 @@ public class EmptyUtil {
         return isEmpty(charSequence) || charSequence.equals("null") || charSequence.equals("NULL");
     }
 
-    public static boolean isEmpty(List list) {
-        return list == null || list.size() == 0;
+    public static boolean isEmpty(Collection collection) {
+        return collection == null || collection.size() == 0;
     }
 
     public static boolean isEmpty(Map map) {
