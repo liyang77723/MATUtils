@@ -17,6 +17,12 @@ public class LogUtil {
         mTag = tag;
     }
 
+    public static void verbose(Object msg) {
+        if (DEBUG) {
+            showLogCat(msg, Log.VERBOSE);
+        }
+    }
+
     public static void debug(Object msg) {
         if (DEBUG) {
             showLogCat(msg, Log.DEBUG);
@@ -32,6 +38,12 @@ public class LogUtil {
     public static void warn(Object msg) {
         if (DEBUG) {
             showLogCat(msg, Log.WARN);
+        }
+    }
+
+    public static void warn(Throwable tr) {
+        if (DEBUG) {
+            showLogCat(Log.getStackTraceString(tr), Log.WARN);
         }
     }
 
@@ -52,7 +64,6 @@ public class LogUtil {
             showLogCat(msg.toString().concat("\n").concat(Log.getStackTraceString(tr)), Log.ERROR);
         }
     }
-
 
     /**
      * 获取调用此方法的类名
@@ -107,6 +118,9 @@ public class LogUtil {
         int length = content.length();
         if (length <= MAX_LOG_LENGTH) {
             switch (level) {
+                case Log.VERBOSE:
+                    Log.v(tag, content);
+                    break;
                 case Log.DEBUG:
                     Log.d(tag, content);
                     break;
