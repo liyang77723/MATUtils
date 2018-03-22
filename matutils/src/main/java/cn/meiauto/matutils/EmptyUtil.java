@@ -26,4 +26,8 @@ public class EmptyUtil {
     public static boolean isEmpty(SparseArray array) {
         return array == null || array.size() == 0;
     }
+
+    public static boolean isEmpty(Object[] objects) {
+        return objects == null || objects.length == 0;
+    }
 }
